@@ -28,7 +28,7 @@ const findAndModifyFirst = (tree, childrenKey, objToFindBy, replacementObj) => {
           isEqual(obj[childrenKey][i][key], objToFindBy[key]) ? findSuccess = true : findSuccess = false;
         });
         if (findSuccess) {
-          obj[childrenKey][i] = replacementObj;
+          obj[childrenKey][i][childrenKey] = replacementObj[childrenKey];
           modifiedObj = true;
           break;
         }
