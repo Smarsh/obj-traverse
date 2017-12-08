@@ -23,7 +23,7 @@ const findAndModifyFirst = (tree, childrenKey, objToFindBy, replacementObj) => {
   }
   const findInChildren = (obj, childrenKey, objToFindBy, replacementObj) => {
     if (obj.hasOwnProperty(childrenKey)) {
-      for (let i = 0; i < obj[childrenKey].length; i++) {
+      for (let i = 0;(obj[childrenKey]) && (i < obj[childrenKey].length); i++) {
         findKeys.forEach((key) => {
           isEqual(obj[childrenKey][i][key], objToFindBy[key]) ? findSuccess = true : findSuccess = false;
         });
