@@ -1,9 +1,10 @@
 {
   "name": "obj-traverse",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Small and lightweight library that enables you to traverse deep nested objects and edit them",
   "main": "lib/obj-traverse.js",
   "scripts": {
+    "build-all": "webpack --progress --colors --mode=build && webpack --progress --colors --mode=dev",
     "build": "webpack --mode=build",
     "dev": "webpack --progress --colors --watch --mode=dev",
     "test": "mocha --compilers js:babel-core/register --colors -w ./src/**/test/*.test.js"
