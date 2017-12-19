@@ -33,7 +33,7 @@ const findAndModifyFirst = (tree, childrenKey, objToFindBy, replacementObj) => {
           break;
         }
       }
-      if (!findSuccess) {
+      if (obj[childrenKey] && !findSuccess) {
         obj[childrenKey].forEach(child => findInChildren(child, childrenKey, objToFindBy, replacementObj));
       }
     }
