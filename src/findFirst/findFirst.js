@@ -16,7 +16,7 @@ const findFirst = (tree, childrenKey, objToFindBy) => {
   const findInChildren = (obj, childrenKey, objToFindBy) => {
     let foundInChild = false;
     if (obj.hasOwnProperty(childrenKey)) {
-      for (let i = 0; i < obj[childrenKey].length; i++) {
+      for (let i = 0;obj[childrenKey] && i < obj[childrenKey].length; i++) {
         findKeys.forEach((key) => {
           isEqual(obj[childrenKey][i][key], objToFindBy[key]) ? foundInChild = true : foundInChild = false;
         });
@@ -26,7 +26,7 @@ const findFirst = (tree, childrenKey, objToFindBy) => {
           break;
         }
       }
-      if (!foundInChild && !found) {
+      if (obj[childrenKey] && !foundInChild && !found) {
         obj[childrenKey].forEach(child => findInChildren(child, childrenKey, objToFindBy));
       }
     }
