@@ -11,7 +11,7 @@ const findAndDeleteFirst = (tree, childrenKey, objToFindBy) => {
     const findKeys = Object.keys(objToFindBy);
     let findSuccess = false;
     if (obj.hasOwnProperty(childrenKey)) {
-      for (let i = 0; i < obj[childrenKey].length; i++) {
+      for (let i = 0;(obj[childrenKey]) && (i < obj[childrenKey].length); i++) {
         findKeys.forEach((key) => {
           isEqual(obj[childrenKey][i][key], objToFindBy[key]) ? findSuccess = true : findSuccess = false;
         });
